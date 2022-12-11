@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import {useEffect} from 'react'
 import { StoreProvider } from '../utils/store';
 import {SnackbarProvider} from 'notistack'
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -16,7 +17,9 @@ function MyApp({ Component, pageProps }) {
       horizontal: 'center',
     }}>
       <StoreProvider >
+        <PayPalScriptProvider deferLoading={true}>
           <Component {...pageProps} />
+        </PayPalScriptProvider>
       </StoreProvider>
     </SnackbarProvider>
   )

@@ -21,6 +21,9 @@ const orderSchema = new mongoose.Schema({
     TotalPrice:{type:Number,required:true},
     itemsPrice:{type:Number,required:true},
     paymentMethod:{type:String,required:true},
+    paymentResult:{
+        id:String,status:String,email_address:String
+    },
     isPaid :{type:Boolean,required:true,default:false},
     isDeliverd :{type:Boolean,required:true,default:false},
     paidAt:{ type:Date},
